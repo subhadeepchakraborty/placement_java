@@ -1,0 +1,43 @@
+import java.util.Scanner;  // Import the Scanner class
+
+class Main {
+  public static void main(String[] args) {
+    Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+   System.out.println("Enter size of array");
+    int n= myObj.nextInt();
+   int[] arr=new int[20];
+     // int[] arr={10,20,30,50,40};
+    System.out.println("give the elements");
+    for(int i=0;i<n;i++)
+    {
+     arr[i]=myObj.nextInt();
+    }
+    System.out.println("GIVE THE NUMBER TO FIND");
+    int key= myObj.nextInt();
+    
+    linear li=new linear();
+    li.comp(arr,key);
+    
+  }
+}
+
+class linear{
+    
+public void comp(int[] a,int b)
+
+{
+    
+   for(int i=0;i<a.length;i++)
+    {
+     if(a[i]==b)
+     {
+      System.out.println("YOUR NUMBER FOUND IN KEY"+ (i+1));     
+     }
+        
+        
+    }
+    
+}
+
+
+}
