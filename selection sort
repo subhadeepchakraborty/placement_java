@@ -1,0 +1,58 @@
+import java.util.Scanner; 
+import java.util.*; 
+
+class selectionclass
+{
+    
+ void selection(int[] arr)
+  { 
+    int i,j,temp; 
+    for(i=0;i<arr.length;i++)
+    {
+        int minindex=i;
+      for(j=(i+1);j<arr.length;j++)  
+        {
+           if(arr[j]<arr[i]) 
+           {
+               
+            minindex=j;          
+           }
+           
+           
+           temp= arr[j];  
+            arr[j]=arr[i];
+            arr[i]=temp;
+
+            
+            
+        }
+        
+    }
+    
+    for(int z=0;z<arr.length;z++)
+    {
+        
+    System.out.print(arr[z]+" ");   
+        
+    }
+    
+    
+
+  }
+    
+}
+public class Main
+{
+	public static void main(String[] args)
+	{
+      
+      int arr[]={80,70,60,50,40,30,20}; 
+      selectionclass sc = new selectionclass();
+      sc.selection(arr);
+      
+	 
+	 
+	    
+		
+	}
+}
