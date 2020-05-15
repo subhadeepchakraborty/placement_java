@@ -1,0 +1,68 @@
+class Main{
+    
+public int partition(int[] arr,int low,int end)
+{
+    int pivot=arr[end];
+
+int i=(low-1);
+for(int j=low;j<end;j++)
+{
+    
+    if(arr[j]<=pivot)
+    {
+    i++;
+    int temp=arr[i];
+    arr[i]=arr[j];
+    arr[j]=temp;
+        
+    }
+    
+}
+
+int temp=arr[end];
+    arr[end]=arr[i+1];
+    arr[i+1]=temp;
+    
+    
+    return i+1;
+}
+
+public void print(int[] arr)
+{
+for(int i=0;i<arr.length;i++)
+{
+    
+System.out.println(arr[i]);    
+    
+}
+    
+    
+}
+
+public void quicksort(int[] arr,int low,int end)
+{
+    if(low<end){
+ int loc=partition(arr,low,end);    
+ quicksort(arr,low,loc-1);
+ quicksort(arr,loc+1,end);
+    }
+}
+    
+    
+    
+    
+    
+    
+    
+public static void main(String args[])    
+{
+    
+int arr[]={50,40,60,26,8,89,45} ;
+int n=arr.length;
+Main me=new Main();
+me.quicksort(arr,0,n-1);
+me.print(arr);    
+    
+}
+    
+}
